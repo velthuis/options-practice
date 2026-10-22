@@ -1,0 +1,26 @@
+{
+  "name": "MSF 8615 Streamlit app",
+  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+  "postCreateCommand": "git config --global pull.rebase false; git config --global core.editor \"code --wait\"; pip install -r requirements.txt",
+  "remoteEnv": {
+    "PATH": "${containerEnv:PATH}:/home/vscode/.local/bin",
+    "GIT_MERGE_AUTOEDIT": "no"
+  },
+  "forwardPorts": [
+    8501
+  ],
+  "portsAttributes": {
+    "8501": {
+      "label": "Streamlit app",
+      "onAutoForward": "openPreview"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "GitHub.copilot-chat"
+      ]
+    }
+  }
+}
